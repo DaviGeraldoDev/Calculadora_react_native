@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   },
 
   visor: {
-    height: 180,
+    height: 200,
     width: '100%',
     backgroundColor: '#fff',
     borderBottomEndRadius: 30,
@@ -126,6 +126,6 @@ const styles = StyleSheet.create({
   buttons: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginTop: 60
+    marginTop: 80
   },
 });

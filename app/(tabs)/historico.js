@@ -123,7 +123,8 @@ const styles = StyleSheet.create({
         height: 40,
         textAlign: 'center',
         textAlignVertical: 'center',
-        marginTop: 20,
+        marginTop: 50,
+        marginBottom: 20,
         borderRadius: 20,
         color: '#fff'
     },
