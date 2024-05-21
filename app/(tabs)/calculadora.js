@@ -1,19 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import useStorage from '../../hooks/useStorage';
 
 export default function Calculadora() {
-    const buttons = ['AC', 'DEL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 3, 2, 1, '+', 0, '.', '⬅', '='] 
-    const colors_button = ['AC', 'DEL', '%', '/', '*', '-', '+', '=']
+    const buttons = ['AC', 'CL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 3, 2, 1, '+', 0, '.', '⬅', '='] 
+    const colors_button = ['AC', 'CL', '%', '/', '*', '-', '+', '=']
     const ops = ['/', '*', '-', '+']
+    const { saveItem, clearItens } = useStorage();
 
     const [NumAtual, setNumAtual] = useState("")
     const [UltimoNum, setUltimoNum] = useState("")
 
     function Calcular_nums() {
         setNumAtual(eval(NumAtual))
+        salvar_op(String(NumAtual + " = " + eval(NumAtual)))
         return
+    }
+
+    async function salvar_op(operacao) {
+      await saveItem("@secretPass", operacao)
+    }
+
+    async function limpar_ops() {
+      await clearItens()
     }
 
     function Identifica_bnt(buttonPressed){
@@ -22,8 +32,8 @@ export default function Calculadora() {
                 setNumAtual(NumAtual + " " + buttonPressed + " ")
                 return
 
-            case 'DEL' :
-                setNumAtual(NumAtual.substring(0, (NumAtual.length -1)))
+            case 'CL' :
+                limpar_ops()
                 return
 
             case '⬅' :
@@ -126,6 +136,6 @@ const styles = StyleSheet.create({
   buttons: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginTop: 80
+    marginTop: 40
   },
 });
