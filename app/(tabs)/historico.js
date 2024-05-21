@@ -45,20 +45,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#000',
         alignItems: 'center'
     },
-    
-    flex_row: {
-      flexDirection: 'row',
-      justifyContent: 'space-between'
-    },
-
-    item: {
-        backgroundColor: '#0C8CD4',
-        paddingVertical: 12,
-        paddingHorizontal: 20,
-        borderRadius: 20,
-        marginTop: 15,
-        width: 350
-      },
       
       title_pag: {
         fontSize: 20,
@@ -70,19 +56,6 @@ const styles = StyleSheet.create({
         marginTop: 50,
         marginBottom: 20,
         borderRadius: 20,
-        color: '#fff'
-    },
-
-    title_item: {
-      fontSize: 20,
-      width: '100%',
-      textAlign: 'center',
-      marginBottom: 10,
-      color: '#fff'
-    },
-
-    font_size_geral: {
-        fontSize: 20,
         color: '#fff'
     }
 });
